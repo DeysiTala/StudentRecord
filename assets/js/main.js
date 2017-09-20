@@ -54,7 +54,7 @@ function mostrar(estudiante) {
     // TO DO: Completar el template para que muestre las propiedades correctas del estudiante
     var resultado = "";
     resultado += "<p><strong>Nombre:</strong> " + estudiante.name + "</p>";
-    resultado += "<p><strong>Puntos Técnicos:</strong> " + estudiante.tech + "% </p>";
+    resultado += "<p><strong>Puntos Técnicos:</strong> " + estudiante.tech + "</p>";
     resultado += "<p><strong>Puntos HSE:</strong> " + estudiante.social + "</p>";
     resultado += "<p><strong>Estado:</strong> Activo";
 
@@ -74,10 +74,11 @@ function mostrarLista(estudiantes) {
 
 
 
-function checkAdult(porcentajeTecnico,porcentajeSocio) {
-    return (porcentajeSocio<=70 & porcentajeTecnico<=70);
+function check(porcentajeTecnico,porcentajeSocio) {
+    return porcentajeSocio<=70 && porcentajeTecnico<=70;
 }
 
 function myFunction() {
-    document.getElementById("container-students").innerHTML = estudiantes.filter(checkAdult);
+//console.log(estudiantes.filter(check));
+    document.getElementById("container-students").innerHTML = estudiantes.filter(check);
 }
